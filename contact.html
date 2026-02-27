@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Robot AI Tech</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #050505; }
+        body { background-color: var(--bg); color: white; font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .glass-panel { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .text-gradient { background: linear-gradient(to right, #60a5fa, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-active { color: #60a5fa !important; }
+        section { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+        section.visible { opacity: 1; transform: translateY(0); }
+        /* Mobile menu animation */
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+            transform: translateY(-10px);
+            opacity: 0;
+            pointer-events: none;
+        }
+        #mobile-menu.active {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass-panel border-b-0">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="about.html" class="flex items-center gap-3">
+                <div class="w-10 h-10 overflow-hidden rounded-lg flex items-center justify-center">
+                    <img src="images/logo.png" alt="Logo" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center\'><i data-lucide=\'bot\' class=\'text-white\'></i></div>'">
+                </div>
+                <span class="font-mono font-bold tracking-tighter text-xl">ROBOT AI TECH</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="about.html" class="nav-link text-xs font-mono tracking-widest text-white/60 hover:text-blue-400 transition-colors">ABOUT</a>
+                <a href="robot.html" class="nav-link text-xs font-mono tracking-widest text-white/60 hover:text-blue-400 transition-colors">ROBOT</a>
+                <a href="drone.html" class="nav-link text-xs font-mono tracking-widest text-white/60 hover:text-blue-400 transition-colors">DRONE</a>
+                <a href="contact.html" class="nav-link nav-active text-xs font-mono tracking-widest text-white/60 hover:text-blue-400 transition-colors">CONTACT</a>
+            </div>
+            <button class="md:hidden text-white" id="mobile-menu-toggle"><i data-lucide="menu"></i></button>
+        </div>
+        <div id="mobile-menu" class="absolute top-20 left-0 w-full bg-[#050505]/95 backdrop-blur-xl border-b border-white/10 p-8 flex flex-col gap-8 md:hidden z-40">
+            <a href="about.html" class="text-lg font-mono tracking-widest text-white/60">ABOUT</a>
+            <a href="robot.html" class="text-lg font-mono tracking-widest text-white/60">ROBOT</a>
+            <a href="drone.html" class="text-lg font-mono tracking-widest text-white/60">DRONE</a>
+            <a href="contact.html" class="text-lg font-mono tracking-widest text-blue-400">CONTACT</a>
+        </div>
+    </nav>
+
+    <main class="pt-24 md:pt-32">
+        <section id="contact" class="py-12 md:py-20 px-6 max-w-7xl mx-auto visible">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20">
+                <div>
+                    <h2 class="text-3xl md:text-5xl font-bold tracking-tighter mb-8 md:mb-12 uppercase">GET IN <br><span class="text-gradient">TOUCH</span></h2>
+                    <div class="space-y-8 md:space-y-12">
+                        <div class="flex gap-6">
+                            <div class="w-12 h-12 rounded-xl glass-panel flex items-center justify-center shrink-0"><i data-lucide="map-pin" class="text-blue-400"></i></div>
+                            <div><h4 class="font-bold mb-2 uppercase">Headquarters</h4><p class="text-white/60 text-sm leading-relaxed">Innovation Drive 101, Silicon Valley<br>California, CA 94025, USA</p></div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="w-12 h-12 rounded-xl glass-panel flex items-center justify-center shrink-0"><i data-lucide="factory" class="text-emerald-400"></i></div>
+                            <div><h4 class="font-bold mb-2 uppercase">Manufacturing Hub</h4><p class="text-white/60 text-sm leading-relaxed">Tech-Park East, Building 4B<br>Shenzhen, Guangdong, China</p></div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="w-12 h-12 rounded-xl glass-panel flex items-center justify-center shrink-0"><i data-lucide="mail" class="text-white/40"></i></div>
+                            <div><h4 class="font-bold mb-2 uppercase">Email & Phone</h4><p class="text-white/60 text-sm leading-relaxed">contact@robot-ai.tech<br>+1 (555) 012-3456</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-8">
+                    <div class="aspect-video rounded-3xl overflow-hidden glass-panel relative">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.639290622367!2d-122.08374688469247!3d37.42199987982519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fbba130c2694d%3A0x2397d9f6558c4482!2sGoogleplex!5e0!3m2!1sen!2sus!4v1645564556455!5m2!1sen!2sus" class="w-full h-full border-0 grayscale invert opacity-50" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="glass-panel rounded-3xl p-8">
+                        <form class="space-y-4" onsubmit="event.preventDefault(); alert('Transmission sent successfully.');">
+                            <div class="grid grid-cols-2 gap-4">
+                                <input type="text" placeholder="NAME" class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-xs font-mono focus:outline-none focus:border-blue-400 transition-colors">
+                                <input type="email" placeholder="EMAIL" class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-xs font-mono focus:outline-none focus:border-blue-400 transition-colors">
+                            </div>
+                            <textarea placeholder="MESSAGE" rows="4" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-xs font-mono focus:outline-none focus:border-blue-400 transition-colors"></textarea>
+                            <button type="submit" class="w-full py-4 bg-blue-500 text-white font-bold rounded-xl hover:bg-blue-400 transition-colors">SEND TRANSMISSION</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-20 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-white/10 rounded flex items-center justify-center"><i data-lucide="bot" class="w-4 h-4"></i></div>
+                <span class="font-mono font-bold tracking-tighter">ROBOT AI TECH</span>
+            </div>
+            <div class="flex gap-8 text-[10px] font-mono text-white/40 tracking-widest uppercase">
+                <a href="#" class="hover:text-white transition-colors">Twitter</a>
+                <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
+                <a href="#" class="hover:text-white transition-colors">Instagram</a>
+            </div>
+            <div class="text-[10px] font-mono text-white/20 uppercase tracking-widest">© 2026 ROBOT AI TECH. ALL RIGHTS RESERVED.</div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const toggle = document.getElementById('mobile-menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        toggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            const icon = toggle.querySelector('i');
+            if (menu.classList.contains('active')) {
+                toggle.innerHTML = '<i data-lucide="x"></i>';
+            } else {
+                toggle.innerHTML = '<i data-lucide="menu"></i>';
+            }
+            lucide.createIcons();
+        });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('section').forEach(section => observer.observe(section));
+    </script>
+</body>
+</html>

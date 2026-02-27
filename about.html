@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Robot AI Tech</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #050505; }
+        body { background-color: var(--bg); color: white; font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .glass-panel { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .text-gradient { background: linear-gradient(to right, #60a5fa, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-active { color: #60a5fa !important; }
+        section { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+        section.visible { opacity: 1; transform: translateY(0); }
+        /* Mobile menu animation */
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+            transform: translateY(-10px);
+            opacity: 0;
+            pointer-events: none;
+        }
+        #mobile-menu.active {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass-panel border-b-0">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="about.html" class="flex items-center gap-3">
+                <div class="w-10 h-10 overflow-hidden rounded-lg flex items-center justify-center">
+                    <img src="images/logo.png" alt="Logo" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center\'><i data-lucide=\'bot\' class=\'text-white\'></i></div>'">
+                </div>
+                <span class="font-mono font-bold tracking-tighter text-xl">ROBOT AI TECH</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="about.html" class="nav-link nav-active text-xs font-mono tracking-widest text-white/60 hover:text-blue-400 transition-colors">ABOUT</a>
+                <a href="robot.html" class="nav-link text-xs font-mono tracking-widest text-white/60 hover:text-blue-400 transition-colors">ROBOT</a>
+                <a href="drone.html" class="nav-link text-xs font-mono tracking-widest text-white/60 hover:text-blue-400 transition-colors">DRONE</a>
+                <a href="contact.html" class="nav-link text-xs font-mono tracking-widest text-white/60 hover:text-blue-400 transition-colors">CONTACT</a>
+            </div>
+            <button class="md:hidden text-white" id="mobile-menu-toggle"><i data-lucide="menu"></i></button>
+        </div>
+        <div id="mobile-menu" class="absolute top-20 left-0 w-full bg-[#050505]/95 backdrop-blur-xl border-b border-white/10 p-8 flex flex-col gap-8 md:hidden z-40">
+            <a href="about.html" class="text-lg font-mono tracking-widest text-blue-400">ABOUT</a>
+            <a href="robot.html" class="text-lg font-mono tracking-widest text-white/60">ROBOT</a>
+            <a href="drone.html" class="text-lg font-mono tracking-widest text-white/60">DRONE</a>
+            <a href="contact.html" class="text-lg font-mono tracking-widest text-white/60">CONTACT</a>
+        </div>
+    </nav>
+
+    <main class="pt-24 md:pt-32">
+        <section id="about" class="py-12 md:py-20 px-6 max-w-7xl mx-auto visible">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center mb-16 md:mb-20">
+                <div>
+                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-6 md:mb-8 uppercase">
+                        BEYOND THE <br>
+                        <span class="text-white/40 italic">ALGORITHM</span>
+                    </h2>
+                    <div class="space-y-4 md:space-y-6 text-white/70 leading-relaxed text-base md:text-lg">
+                        <p>Founded in 2022, Robot AI Tech is at the forefront of the robotics revolution. We believe that AI shouldn't just live in screens—it should have a body, a presence, and a purpose in the physical world.</p>
+                        <p>Our R&D facilities combine world-class mechanical engineering with cutting-edge neural network research. We specialize in computer vision, tactile sensing, and autonomous navigation.</p>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="aspect-square rounded-3xl overflow-hidden glass-panel p-2">
+                        <img src="images/about_lab.jpg" alt="R&D Lab" class="w-full h-full object-cover rounded-2xl opacity-80">
+                    </div>
+                    <div class="absolute -bottom-10 -left-10 glass-panel p-8 rounded-2xl hidden md:block">
+                        <i data-lucide="cpu" class="text-blue-400 mb-4 w-8 h-8"></i>
+                        <div class="text-sm font-bold">NeuralCore v4</div>
+                        <div class="text-xs text-white/50">Next-gen processing unit</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass-panel p-10 rounded-3xl group hover:border-blue-500/50 transition-colors">
+                    <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="bot" class="text-blue-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Advanced Robotics</h3>
+                    <p class="text-white/60 mb-8 text-sm leading-relaxed">Developing humanoid and specialized robotic platforms for industrial automation, healthcare, and hazardous environment exploration.</p>
+                    <a href="robot.html" class="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-blue-400 hover:text-blue-300 transition-colors">
+                        EXPLORE ROBOTICS <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                <div class="glass-panel p-10 rounded-3xl group hover:border-emerald-500/50 transition-colors">
+                    <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="navigation" class="text-emerald-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Aerial Systems</h3>
+                    <p class="text-white/60 mb-8 text-sm leading-relaxed">Autonomous UAV solutions for logistics, high-altitude surveillance, and precision agriculture with integrated AI flight controllers.</p>
+                    <a href="drone.html" class="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-emerald-400 hover:text-emerald-300 transition-colors">
+                        EXPLORE DRONES <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-20 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-white/10 rounded flex items-center justify-center"><i data-lucide="bot" class="w-4 h-4"></i></div>
+                <span class="font-mono font-bold tracking-tighter">ROBOT AI TECH</span>
+            </div>
+            <div class="flex gap-8 text-[10px] font-mono text-white/40 tracking-widest uppercase">
+                <a href="#" class="hover:text-white transition-colors">Twitter</a>
+                <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
+                <a href="#" class="hover:text-white transition-colors">Instagram</a>
+            </div>
+            <div class="text-[10px] font-mono text-white/20 uppercase tracking-widest">© 2026 ROBOT AI TECH. ALL RIGHTS RESERVED.</div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const toggle = document.getElementById('mobile-menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        toggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            const icon = toggle.querySelector('i');
+            if (menu.classList.contains('active')) {
+                toggle.innerHTML = '<i data-lucide="x"></i>';
+            } else {
+                toggle.innerHTML = '<i data-lucide="menu"></i>';
+            }
+            lucide.createIcons();
+        });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('section').forEach(section => observer.observe(section));
+    </script>
+</body>
+</html>

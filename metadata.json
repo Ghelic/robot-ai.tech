@@ -1,0 +1,5 @@
+{
+  "name": "Robot AI Tech",
+  "description": "A high-tech showcase for cutting-edge AI robots and drones.",
+  "requestFramePermissions": ["geolocation"]
+}
